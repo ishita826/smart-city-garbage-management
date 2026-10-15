@@ -25,8 +25,8 @@ Uncollected garbage can create unhygienic public spaces and make it difficult fo
 
 - **Language:** Java
 - **Backend:** Spring Boot
-- **Database:** To be selected / finalized
-- **Frontend:** To be finalized
+- **Database:** To be selected 
+- **Frontend:** HTML CSS JS
 
 The stack and design may be refined during implementation.
 
