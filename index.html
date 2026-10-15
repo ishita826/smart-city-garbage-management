@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCity | Smart Garbage Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="#home" class="brand">
+            <span class="brand-icon">♻</span>
+            <span>Eco<span class="brand-highlight">City</span>
+                <small>SMART WASTE MANAGEMENT</small>
+            </span>
+        </a>
+
+        <nav>
+            <a href="#home" class="active">Dashboard</a>
+            <a href="#report">Report Waste</a>
+            <a href="#reports">Track Reports</a>
+        </nav>
+
+        <a href="#report" class="header-btn">+ New Report</a>
+    </header>
+
+    <main class="container" id="home">
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="eyebrow">A CLEANER TOMORROW STARTS TODAY</span>
+                <h1>Let's make our city<br>
+                    <span>cleaner & greener.</span>
+                </h1>
+                <p>
+                    Spot garbage? Report it. Track its progress.
+                    Together, we can build a cleaner and smarter city.
+                </p>
+                <a href="#report" class="primary-btn">Report Garbage <span>→</span></a>
+            </div>
+
+            <div class="hero-art">
+                <div class="art-circle">
+                    <span class="leaf leaf-one">🌿</span>
+                    <span class="art-emoji">🏙️</span>
+                    <span class="leaf leaf-two">🍃</span>
+                </div>
+                <div class="floating-note">
+                    <span class="online-dot"></span>
+                    Small actions, big impact
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <div class="stat-icon green">♻</div>
+                <div>
+                    <p>Total Reports</p>
+                    <h2 id="totalReports">0</h2>
+                    <small>Reports submitted</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon orange">◷</div>
+                <div>
+                    <p>Pending Reports</p>
+                    <h2 id="pendingReports">0</h2>
+                    <small>Awaiting collection</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon blue">✓</div>
+                <div>
+                    <p>Resolved Reports</p>
+                    <h2 id="resolvedReports">0</h2>
+                    <small>Marked as collected</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="content-grid">
+
+            <section class="panel report-panel" id="report">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">HELP YOUR COMMUNITY</span>
+                        <h2>Report Garbage</h2>
+                        <p>Provide details so the issue can be addressed.</p>
+                    </div>
+                    <span class="heading-icon">📍</span>
+                </div>
+
+                <form id="garbageForm">
+
+                    <div class="form-group">
+                        <label for="garbageType">Type of Waste <span>*</span></label>
+                        <select id="garbageType" required>
+                            <option value="">Select waste type</option>
+                            <option>Household Waste</option>
+                            <option>Plastic Waste</option>
+                            <option>Construction Waste</option>
+                            <option>Overflowing Bin</option>
+                            <option>Organic Waste</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Location / Address <span>*</span></label>
+                        <div class="location-row">
+                            <input type="text" id="location"
+                                   placeholder="Street, area or landmark" required>
+                            <button type="button" id="gpsBtn" class="gps-btn">
+                                ⊙ GPS
+                            </button>
+                        </div>
+                        <small id="gpsMessage" class="helper">
+                            Use GPS to capture your current coordinates.
+                        </small>
+                    </div>
+
+                    <input type="hidden" id="latitude">
+                    <input type="hidden" id="longitude">
+
+                    <div class="form-group">
+                        <label for="description">Description <span>*</span></label>
+                        <textarea id="description" rows="3"
+                                  placeholder="Describe the garbage issue..."
+                                  required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo">Upload Photo</label>
+                        <input type="file" id="photo" accept="image/*">
+                        <small class="helper">Optional. Add a photo of the affected area.</small>
+                    </div>
+
+                    <button type="submit" class="primary-btn submit-btn">
+                        Submit Report <span>→</span>
+                    </button>
+
+                    <p id="formMessage" class="form-message" role="status"></p>
+                </form>
+            </section>
+
+            <section class="panel reports-panel" id="reports">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow">YOUR ACTIVITY</span>
+                        <h2>Recent Reports</h2>
+                        <p>Keep track of your reported issues.</p>
+                    </div>
+                    <span class="heading-icon">📋</span>
+                </div>
+
+                <div class="report-list" id="reportList"></div>
+
+                <div class="empty-state" id="emptyState">
+                    <div class="empty-icon">📭</div>
+                    <h3>No reports yet</h3>
+                    <p>Your submitted garbage reports will appear here.</p>
+                    <a href="#report">Create your first report →</a>
+                </div>
+            </section>
+
+        </section>
+
+        <section class="bottom-banner">
+            <div class="banner-icon">🌱</div>
+            <div>
+                <h3>A cleaner city begins with you.</h3>
+                <p>Every report is a step towards a healthier environment.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 EcoCity · Location Based Garbage Management System</p>
+        <p>Clean Streets. Green Future.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
